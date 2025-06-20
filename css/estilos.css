@@ -90,8 +90,13 @@ h2 { font-size: 1.8rem; color: var(--main-color); }
 
 .tarjeta:hover {
   transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* Efecto para tarjetas de vehículos */
+  transform: translateY(-5px); 
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease; 
 }
+
 
 .btn {
   background: var(--main-color);
@@ -162,13 +167,6 @@ h2 { font-size: 1.8rem; color: var(--main-color); }
 button:hover, .btn:hover {
   background-color: #21867a; 
   transform: scale(1.05); 
-}
-
-/* Efecto para tarjetas de vehículos */
-.tarjeta:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
-  transition: all 0.3s ease; 
 }
 
 
