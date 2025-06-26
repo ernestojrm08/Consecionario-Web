@@ -3,57 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concesionario de Vehículos</title>
+    <title>Concesionario de Vehículos | Venta de camionetas nuevas y usadas</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <!-- Realizado por: [Diego Alejandro Aguilar Bello] -->
-
-    <header class="header">
-        <div class="logo">
-            <a href="index.html">
-                <img src="image.png" alt="Logo Concesionario">
+    <!-- 
+      Encabezado del sitio:
+      - Contiene el logo y navegación principal
+      - Role="banner" implícito por ser el header principal
+      - Diseño flexible para adaptarse a diferentes pantallas
+    -->
+    <header class="header" role="banner">
+        <!-- 
+          Contenedor del logo:
+          - Enlace a la página principal para mejor UX
+          - Imagen con texto alternativo descriptivo
+          - Estilo circular con borde para destacar
+        -->
+        <div class="logo" aria-label="Logo del concesionario">
+            <a href="index.html" aria-current="page">
+                <img src="image.png" alt="Logo Concesionario Correre - Especialistas en vehículos desde 2005">
             </a>
-
         </div>
-        <nav class="nav">
-            <a href="index.html">Inicio</a>
+        
+        <!-- 
+          Navegación principal:
+          - Lista con las diferentes secciones de la página
+          - Estilo consistente
+          - Efectos hover para mejor interacción
+        -->
+        <nav class="nav" aria-label="Navegación principal">
+            <a href="index.html" aria-current="page">Inicio</a>
             <a href="servicios.html">Servicios</a>
             <a href="nosotros.html">Nosotros</a>
             <a href="contacto.html">Contacto</a>
         </nav>
     </header>
 
-    <main class="landing">
-        <div class="hero-text"> <!-- Contenedor nuevo para modificar en css -->
-        <h1>Bienvenido a Concesionario de Vehículos</h1>
-        <p>Descubre nuestros mejores modelos de camionetas.</p>
-        </div>
+    <main class="landing index-hero" id="main-content">
+        <!-- 
+          Sección hero con efecto parallax:
+          - Imagen de fondo con efecto de desplazamiento
+          - Atributo data-speed controla la intensidad del efecto
+          - Texto con contraste garantizado para accesibilidad
+        -->
+        <section class="hero parallax-section" data-speed="0.5" aria-label="Presentación principal">
+            <div class="hero-text">
+                <h1 class="texto-con-contorno">Bienvenido a Concesionario de vehículos</h1>
+                <p class="texto-con-contorno">Descubre nuestros mejores modelos de camionetas.</p>
+            </div>
+        </section>
 
-        <section class="vehiculos">
-            <!-- Tarjeta 1 -->
-            <article class="tarjeta">
-                 <img src="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_25a6a899dfdd43beae53fc19419db0f3.jpg" alt="Camioneta 1">
-                <h3>Camioneta Off-Road</h3>
+        <!-- 
+          Galería de vehículos del concesionario:
+          - Grid responsivo que se adapta al tamaño de pantalla
+          - Cada vehículo es un artículo independiente
+          - Atributos aria-label para contexto semántico
+        -->
+        <section class="vehiculos" aria-label="Catálogo de vehículos destacados">
+            <!-- 
+              Tarjetas para cada uno de los vehículos:
+              - Article como contenido independiente
+              - Imagen con alt descriptivo
+              - Precio destacado con animación (En el caso de las 2 más económicas)
+              - Botón con estilo consistente
+            -->
+
+            <article class="tarjeta" aria-labelledby="vehiculo1-title">
+                <img src="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_25a6a899dfdd43beae53fc19419db0f3.jpg" 
+                     alt="Camioneta Off-Road modelo 2023, color verde, en terreno montañoso">
+                <h3 id="vehiculo1-title">Camioneta Off-Road</h3>
                 <p>Robusta, confiable y lista para cualquier aventura.</p>
                 <p class="precio destacado">$15,000</p>
-                <a href="tarjeta1.html">
-                    <button class="btn">Más información</button> <!-- Botón añadido para ux -->
+                <a href="tarjeta1.html" aria-label="Más información sobre Camioneta Off-Road">
+                    <button class="btn">Más información</button>
                 </a>
             </article>
 
-            <!-- Tarjeta 2 -->
             <article class="tarjeta">
-                <img src="https://th.bing.com/th/id/OIP.bk0ui5wTM9xj8NMG9hdo-wHaFj?rs=1&pid=ImgDetMain" alt="Camioneta 2">
+                <img src="https://th.bing.com/th/id/OIP.bk0ui5wTM9xj8NMG9hdo-wHaFj?rs=1&pid=ImgDetMain" 
+                     alt="Camioneta urbana color plateado en ciudad">
                 <h3>Camioneta Urbana</h3>
                 <p>Moderna, cómoda y eficiente para la ciudad.</p>
                 <p class="precio">$18,500</p>
                 <a href="tarjeta2.html">
-                    <button class="btn">Más información</button> <!-- Botón añadido para ux -->
+                    <button class="btn">Más información</button>
                 </a>
             </article>
 
-            <!-- Tarjeta 3 -->
             <article class="tarjeta">
                 <img src="https://cdcssl.ibsrv.net/autodata/images/?IMG=USD30TOS111A021001.JPG&WIDTH=1200" alt="Camioneta 3">
                 <h3>Camioneta Familiar</h3>
@@ -64,7 +101,6 @@
                 </a>
             </article>
 
-            <!-- Tarjeta 4 -->
             <article class="tarjeta">
                  <img src="https://th.bing.com/th/id/OIP.uk-fGLFt__Sq_AffX3HwDwHaHa?rs=1&pid=ImgDetMain" alt="Camioneta 4">
                 <h3>Camioneta de Lujo</h3>
@@ -75,7 +111,6 @@
                 </a>
             </article>
 
-            <!-- Tarjeta 5 (Nueva) -->
             <article class="tarjeta">
                 <img src="https://th.bing.com/th/id/OIP.RceGpnBFIoXutCHgXgOi8AHaEc?r=0&pid=ImgDet&w=191&h=114&c=7&cb=idpwebpc2" alt="Camioneta 5">
                 <h3>Camioneta Compacta</h3>
@@ -86,7 +121,6 @@
                 </a>
             </article>
 
-            <!-- Tarjeta 6 (Nueva) -->
             <article class="tarjeta">
                 <img src="https://th.bing.com/th/id/OIP.mMbPsa6T5c1YBatzJShGiQHaEK?w=263&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Camioneta 6">
                 <h3>Camioneta Premium</h3>
@@ -97,12 +131,21 @@
                 </a>
             </article>
         </section>
+
+        <!-- 
+          Sección con efecto parallax:
+          - Sin contenido semántico (aria-hidden)
+          - Diferente velocidad de parallax para efecto visual
+          - Espaciado vertical para separar secciones
+        -->
+        <section class="parallax-section" data-speed="0.3" aria-hidden="true"></section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" aria-label="Información legal">
         <p>&copy; Correre 2025 Concesionario. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/parallax.js" defer></script>
 </body>
 </html>
