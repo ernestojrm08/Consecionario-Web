@@ -18,3 +18,41 @@ Realizado por: Diego Aguilar
 - HTML5
 
 ¡Gracias por revisar el proyecto!
+
+/////REVISAR/////
+
+
+### Integrante 1 (Paola)
+
+#### HTML Semántico
+- Estructura completa utilizando etiquetas semánticas HTML5
+- Uso adecuado de:
+  - `<header>`, `<nav>`, `<main>`, `<footer>`
+  - `<section>` para agrupar contenido relacionado
+  - `<article>` para elementos independientes (tarjetas de vehículos)
+- Atributos ARIA para mejorar accesibilidad:
+  - `aria-label` en secciones importantes
+  - `aria-current` en enlace activo
+
+#### Efecto Parallax
+- Implementado en sección hero y divisoria
+- Características:
+  - Control de velocidad mediante `data-speed`
+  - Desactivación automática en móviles
+  - Imágenes optimizadas para performance
+
+#### Accesibilidad
+- Textos alternativos descriptivos en imágenes
+- Contraste adecuado en todos los textos
+- Navegación por teclado habilitada
+- Roles ARIA donde fueron necesarios
+
+#### Pruebas Responsive
+- Verificación en:
+  - Móviles (viewport < 768px)
+  - Tablets (768px - 1024px)
+  - Escritorio (> 1024px)
+- Puntos verificados:
+  - Legibilidad de textos
+  - Comportamiento del parallax
+  - Reorganización de elementos
