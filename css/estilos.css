@@ -254,3 +254,92 @@ h2 {
     margin: 0 0.5rem;
   }
 }
+
+
+/* Realizado por: Ernesto Rengifo
+   MENÚ HAMBURGUESA RESPONSIVO
+    */
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* 
+   MEDIA QUERIES - diseño responsivo
+   */
+
+@media (hover: none) {
+  .parallax-section {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav a {
+    margin: 0.5rem 0;
+    display: block;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehiculos {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/*
+   EFECTOS ADICIONALES - UI/UX
+   */
+
+@keyframes slideInDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hero-text {
+  animation: slideInDown 0.6s ease-out;
+}
