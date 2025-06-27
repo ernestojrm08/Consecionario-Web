@@ -258,25 +258,26 @@ h2 {
 
 /* Realizado por: Ernesto Rengifo
    MENÚ HAMBURGUESA RESPONSIVO
-    */
+*/
 
+/* — Estilos globales — */
 .menu-toggle {
-  display: none;
+  display: none;               /* icono oculto en desktop */
   font-size: 2rem;
   color: var(--text-light);
   cursor: pointer;
 }
 
-/* 
-   MEDIA QUERIES - diseño responsivo
-   */
-
-@media (hover: none) {
-  .parallax-section {
-    background-attachment: scroll;
-  }
+.nav {
+  display: none;               /* nav oculto hasta hacer toggle */
+  flex-direction: column;
 }
 
+.nav.active {
+  display: flex;               /* nav visible cuando tiene .active */
+}
+
+/* — Para pantallas hasta 768px — */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -286,15 +287,13 @@ h2 {
   }
 
   .menu-toggle {
-    display: block;
+    display: block;            /* muestro el icono ☰ */
     position: absolute;
     top: 1rem;
     right: 1rem;
   }
 
   .nav {
-    display: none;
-    flex-direction: column;
     text-align: center;
     background-color: var(--secondary-color);
     width: 100%;
@@ -306,12 +305,32 @@ h2 {
     margin: 0.5rem 0;
     display: block;
   }
+  
+}
 
-  .nav.active {
-    display: flex;
+/* — Para pantallas mayores a 768px — */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;             /* oculto el icono en desktop */
+  }
+
+  .nav {
+    display: flex;             /* nav siempre visible en desktop */
+    flex-direction: row;
+    gap: 2rem;
+    background: none;
+    width: auto;
+    padding: 0;
+    border: none;
+  }
+
+  .nav a {
+    margin: 0;
+    display: inline-block;
   }
 }
 
+/* — Ajustes extra para pantallas muy pequeñas — */
 @media (max-width: 480px) {
   .vehiculos {
     grid-template-columns: 1fr;
@@ -331,13 +350,10 @@ h2 {
   }
 }
 
-/*
-   EFECTOS ADICIONALES - UI/UX
-   */
-
+/* — EFECTOS ADICIONALES — */
 @keyframes slideInDown {
   from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(0);       opacity: 1; }
 }
 
 .hero-text {

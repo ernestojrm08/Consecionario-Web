@@ -28,3 +28,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const nav = document.querySelector(".nav");
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
+});
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("active");
+
+  if (isOpen) {
+    // expande hasta su altura real
+    nav.style.maxHeight = nav.scrollHeight + "px";
+  } else {
+    // colapsa
+    nav.style.maxHeight = "0";
+  }
+});
+
+
+
+
