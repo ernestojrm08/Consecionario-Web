@@ -29,29 +29,65 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// script para el menú responsivo - Ernesto Rengifo
+
 document.addEventListener("DOMContentLoaded", () => {
+  // seleccionamos el boton hamburguesa y la barra de navegación
   const menuToggle = document.getElementById("menu-toggle");
   const nav = document.querySelector(".nav");
-
+  // verificamos que ambos elementos existan
   if (menuToggle && nav) {
     menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
+      nav.classList.toggle("active"); // alternar visibilidad del menu
     });
   }
 });
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("active");
 
-  if (isOpen) {
-    // expande hasta su altura real
-    nav.style.maxHeight = nav.scrollHeight + "px";
-  } else {
-    // colapsa
-    nav.style.maxHeight = "0";
-  }
+// script para el carrusel de imágenes - Ernesto Rengifo
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const prevBtn = document.querySelector('.carousel-button.left');
+  const nextBtn = document.querySelector('.carousel-button.right');
+  const dots = Array.from(document.querySelectorAll('.carousel-indicator'));
+
+  const slideWidth = slides[0].getBoundingClientRect().width;
+
+  // Colocar cada slide
+  slides.forEach((slide, index) => {
+    slide.style.left = (slideWidth * index) + 'px';
+  });
+
+  const moveToSlide = (targetIndex) => {
+    track.style.transform = `translateX(-${slideWidth * targetIndex}px)`;
+    track.querySelector('.current-slide')?.classList.remove('current-slide');
+    slides[targetIndex].classList.add('current-slide');
+    document.querySelector('.carousel-indicator.current-slide')?.classList.remove('current-slide');
+    dots[targetIndex].classList.add('current-slide');
+  };
+
+  // Botón siguiente
+  nextBtn.addEventListener('click', () => {
+    const currentIndex = slides.findIndex(slide => slide.classList.contains('current-slide'));
+    const nextIndex = (currentIndex + 1) % slides.length;
+    moveToSlide(nextIndex);
+  });
+
+  // Botón anterior
+  prevBtn.addEventListener('click', () => {
+    const currentIndex = slides.findIndex(slide => slide.classList.contains('current-slide'));
+    const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+    moveToSlide(prevIndex);
+  });
+
+  // Click en indicadores
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      moveToSlide(idx);
+    });
+  });
 });
-
 
 
 
