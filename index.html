@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Concesionario de Vehículos | Venta de camionetas nuevas y usadas</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/carrusel.css">
 </head>
 <body>
     <!-- 
@@ -137,33 +138,19 @@
             </article>
         </section>
 
-<!--Carrusel de imagenes-->
-        <section class="carousel">
-  <div class="carousel-track-container">
-    <ul class="carousel-track">
-      <li class="carousel-slide current-slide">
-        <img src="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_25a6a899dfdd43beae53fc19419db0f3.jpg" alt="Vehículo 1">
-      </li>
-      <li class="carousel-slide">
-        <img src="https://th.bing.com/th/id/OIP.bk0ui5wTM9xj8NMG9hdo-wHaFj?rs=1&pid=ImgDetMain" alt="Vehículo 2">
-      </li>
-      <li class="carousel-slide">
-        <img src="https://cdcssl.ibsrv.net/autodata/images/?IMG=USD30TOS111A021001.JPG&WIDTH=1200" alt="Vehículo 3">
-      </li>
-      <!-- más slides -->
-    </ul>
-  </div>
-  <button class="carousel-button left">&#10094;</button>
-  <button class="carousel-button right">&#10095;</button>
-  <div class="carousel-nav">
-    <button class="carousel-indicator current-slide"></button>
-    <button class="carousel-indicator"></button>
-    <button class="carousel-indicator"></button>
-  </div>
-</section>
+<!--Carrusel de imagenes -->
+    <div class="carrusel">
+  <div class="slide"><img src="https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_25a6a899dfdd43beae53fc19419db0f3.jpg" alt="Vehículo 1"></div>
+  <div class="slide"><img src="https://th.bing.com/th/id/OIP.bk0ui5wTM9xj8NMG9hdo-wHaFj?rs=1&pid=ImgDetMain"  alt="Vehículo 2"></div>
+  <div class="slide"><img src="https://cdcssl.ibsrv.net/autodata/images/?IMG=USD30TOS111A021001.JPG&WIDTH=1200" alt="Vehículo 3"></div>
+  <div class="slide"><img src="https://th.bing.com/th/id/OIP.uk-fGLFt__Sq_AffX3HwDwHaHa?rs=1&pid=ImgDetMain" alt="Vehículo 4"></div>
+  <div class="slide"><img src="https://th.bing.com/th/id/OIP.RceGpnBFIoXutCHgXgOi8AHaEc?r=0&pid=ImgDet&w=191&h=114&c=7&cb=idpwebpc2"  alt="Vehículo 5"></div>
+  <div class="slide"><img src="https://th.bing.com/th/id/OIP.mMbPsa6T5c1YBatzJShGiQHaEK?w=263&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Vehículo 6"></div>
+  <button id="prev">⬅</button>
+  <button id="next">➡</button>
+</div>
 
-        <!-- 
-          Sección con efecto parallax:
+      <!-- Sección con efecto parallax:
           - Sin contenido semántico (aria-hidden)
           - Diferente velocidad de parallax para efecto visual
           - Espaciado vertical para separar secciones
@@ -177,5 +164,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/parallax.js" defer></script>
+    <script src="js/carrusel.js"></script>
+
 </body>
 </html>

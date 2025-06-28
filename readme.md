@@ -56,3 +56,10 @@ Realizado por: Diego Aguilar
   - Legibilidad de textos
   - Comportamiento del parallax
   - Reorganización de elementos
+
+
+  **Integrante 3 (Diego Aguilar):**
+  - Creación del carrusel funcional en `js/carrusel.js`.
+  - Configuración y optimización de Webpack (`webpack.config.js`).
+  - Generación de la carpeta `dist`.
+  - Documentación técnica y README.

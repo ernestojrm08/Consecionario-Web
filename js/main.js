@@ -89,5 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+import '../css/estilos.css';
+import '../css/carrusel.css';
+import './carrusel.js';
+import './parallax.js';
 
 
